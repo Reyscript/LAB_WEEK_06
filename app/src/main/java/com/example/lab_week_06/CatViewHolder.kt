@@ -8,8 +8,8 @@ import com.example.lab_week_06.model.CatBreed
 import com.example.lab_week_06.model.CatModel
 import com.example.lab_week_06.model.Gender
 
-private val FEMALE_SYMBOL = "\u2640"
-private val MALE_SYMBOL = "\u2642"
+private val FEMALE_SYMBOL = "♀"
+private val MALE_SYMBOL = "♂"
 private const val UNKNOWN_SYMBOL = "?"
 
 class CatViewHolder(

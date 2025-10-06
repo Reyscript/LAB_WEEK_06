@@ -24,37 +24,88 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView.adapter = catAdapter
+        supportActionBar?.hide()
 
-        recyclerView.layoutManager = LinearLayoutManager(this,
-            LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = catAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         val itemTouchHelper = ItemTouchHelper(catAdapter.swipeToDeleteCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
-        catAdapter.setData(
-            listOf(
-                CatModel(
-                    Gender.Male,
-                    CatBreed.BalineseJavanese,
-                    "Fred",
-                    "Silent and deadly",
-                    "https://cdn2.thecatapi.com/images/7dj.jpg"
-                ),
-                CatModel(
-                    Gender.Female,
-                    CatBreed.ExoticShorthair,
-                    "Wilma",
-                    "Cuddly assassin",
-                    "https://cdn2.thecatapi.com/images/egv.jpg"
-                ),
-                CatModel(
-                    Gender.Unknown,
-                    CatBreed.AmericanCurl,
-                    "Curious George",
-                    "Award winning investigator",
-                    "https://cdn2.thecatapi.com/images/bar.jpg"
-                )
+        catAdapter.setData(createCatData())
+    }
+
+    private fun createCatData(): List<CatModel> {
+        return listOf(
+            CatModel(
+                Gender.Male,
+                CatBreed.BalineseJavanese,
+                "Fred",
+                "Silent and deadly hunter with amazing stealth abilities",
+                "https://cdn2.thecatapi.com/images/7dj.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.ExoticShorthair,
+                "Wilma",
+                "Cuddly assassin who loves naps and warm blankets",
+                "https://cdn2.thecatapi.com/images/egv.jpg"
+            ),
+            CatModel(
+                Gender.Unknown,
+                CatBreed.AmericanCurl,
+                "Curious George",
+                "Award winning investigator of mysterious sounds",
+                "https://cdn2.thecatapi.com/images/bar.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.BalineseJavanese,
+                "Reyarune",
+                "Mystical cat with ancient wisdom and magical powers",
+                "https://cdn2.thecatapi.com/images/9u1.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.ExoticShorthair,
+                "Devarune",
+                "Divine feline blessed with celestial grace",
+                "https://cdn2.thecatapi.com/images/bu1.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.AmericanCurl,
+                "Furina",
+                "Elegant dancer with water-like fluid movements",
+                "https://cdn2.thecatapi.com/images/d5q.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.BalineseJavanese,
+                "Castorice",
+                "Noble knight protecting the household kingdom",
+                "https://cdn2.thecatapi.com/images/6s6.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.ExoticShorthair,
+                "Evernight",
+                "Midnight hunter with stars in her eyes",
+                "https://cdn2.thecatapi.com/images/7r7.jpg"
+            ),
+            CatModel(
+                Gender.Male,
+                CatBreed.AmericanCurl,
+                "Leo",
+                "Adventurous explorer of cardboard boxes",
+                "https://cdn2.thecatapi.com/images/8u8.jpg"
+            ),
+            CatModel(
+                Gender.Female,
+                CatBreed.BalineseJavanese,
+                "Tiara",
+                "Beautiful princess who demands royal treatment",
+                "https://cdn2.thecatapi.com/images/9i9.jpg"
             )
         )
     }
@@ -62,7 +113,16 @@ class MainActivity : AppCompatActivity() {
     private fun showSelectionDialog(cat: CatModel) {
         AlertDialog.Builder(this)
             .setTitle("Cat Selected")
-            .setMessage("You have selected cat ${cat.name}")
+            .setMessage("You have selected ${cat.name} - ${getBreedDisplayName(cat.breed)}")
             .setPositiveButton("OK") { _, _ -> }.show()
+    }
+
+    private fun getBreedDisplayName(breed: CatBreed): String {
+        return when (breed) {
+            CatBreed.AmericanCurl -> "American Curl"
+            CatBreed.BalineseJavanese -> "Balinese-Javanese"
+            CatBreed.ExoticShorthair -> "Exotic Shorthair"
+            else -> "Unknown"
+        }
     }
 }
