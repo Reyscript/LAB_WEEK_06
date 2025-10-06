@@ -2,11 +2,11 @@ LAB_WEEK_06 - RecyclerView with CardView and Swipe to Delete
 
 Link Google Drive
 
-Keseluruhan Project: https://drive.google.com/drive/u/5/folders/1FWYIyx6DsQUiFUIuntvEw63H0jooyxJ_
+[Keseluruhan Project](https://drive.google.com/drive/u/5/folders/1FWYIyx6DsQUiFUIuntvEw63H0jooyxJ_)
 
-Images & Screenshots: https://drive.google.com/drive/u/5/folders/1ZuwNX7s2ISTB85iBfrfIE6_GXPuXBB4P
+[Images & Screenshots](https://drive.google.com/drive/u/5/folders/1ZuwNX7s2ISTB85iBfrfIE6_GXPuXBB4P)
 
-APK File: https://drive.google.com/drive/u/5/folders/1qYdZWc_ZtdALCeHAwFKKhGxK-6_OKyf4
+[APK File](https://drive.google.com/drive/u/5/folders/1qYdZWc_ZtdALCeHAwFKKhGxK-6_OKyf4)
 
 Commit History
 
